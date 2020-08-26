@@ -10,7 +10,9 @@ class MyList extends Component
             <div>
                 <h1> Things I should stop procrastinating:</h1>
                 <ul>
-                    <ListItems />
+                    <ListItems doThis="Buy ice cream" />
+                    <ListItems doThis="Eat pizza" />
+                    <ListItems doThis="Drink Soda" />
                 </ul>
             </div>
         )

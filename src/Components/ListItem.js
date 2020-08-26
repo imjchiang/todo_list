@@ -5,7 +5,7 @@ class ListItem extends Component
     render()
     {
         return(
-            <li>Make the list!</li>
+            <li>{this.props.doThis}</li>
         )
     }
 }
