@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import ListItems from "./Components/ListItem"
+import ListItem from "./Components/ListItem"
 
 class MyList extends Component 
 {
     render() 
     {
+        let todoItems = this.props.theList.map((item, index) =>
+        (
+            <ListItem doThis={item} key={"todo" + index} />
+        ));
         return(
             <div>
                 <h1> Things I should stop procrastinating:</h1>
                 <ul>
-                    <ListItems doThis="Buy ice cream" />
-                    <ListItems doThis="Eat pizza" />
-                    <ListItems doThis="Drink Soda" />
+                    {todoItems}
                 </ul>
             </div>
         )
