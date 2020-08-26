@@ -16,4 +16,4 @@ class MyList extends Component
     }
 }
 
-export default MyList
+export default MyList;
