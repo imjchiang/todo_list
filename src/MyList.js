@@ -10,11 +10,11 @@ class MyList extends Component
         this.state = 
         {
             toDoItemArray: props.theList,
-            newItem: props.body
+            newItem: ""
         }
     }
 
-    clearList = e =>
+    clearList(e)
     {
         console.log("Clearing List");
         this.setState(
@@ -23,7 +23,7 @@ class MyList extends Component
         });
     }
 
-    newItemChange = e =>
+    newItemChange(e)
     {
         this.setState(
         {
@@ -31,12 +31,27 @@ class MyList extends Component
         });
     }
 
+    addItem(e)
+    {
+        e.preventDefault();
+        const newArray = this.state.toDoItemArray;
+        newArray.push(this.state.newItem);
+        this.setState(
+        {
+            toDoItemArray: newArray,
+            newItem: ""
+        });
+        console.log(this.state.toDoItemArray);
+    }
+    
+    
     render() 
     {
-        let todoItems = this.state.toDoItemArray.map((item, index) =>
-        (
-            <ListItem doThis={item} key={index} />
-        ));
+        const todoItems = this.state.toDoItemArray.map((item, index) =>
+        {
+            return <ListItem doThis={item} key={index} />
+        });
+        
         return(
             <div>
                 <h1> Things I should stop procrastinating:</h1>
