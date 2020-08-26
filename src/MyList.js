@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ListItems from "./Components/ListItem"
 
 class MyList extends Component 
 {
@@ -9,7 +10,7 @@ class MyList extends Component
             <div>
                 <h1> Things I should stop procrastinating:</h1>
                 <ul>
-                <li></li>
+                    <ListItems />
                 </ul>
             </div>
         )
